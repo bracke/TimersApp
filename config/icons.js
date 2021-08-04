@@ -1,6 +1,5 @@
 module.exports = function () {
   return {
-    'free-solid-svg-icons': 'all',
-    /*  'pro-light-svg-icons': ['adjust', 'ambulance', 'pencil-alt'],*/
+    'free-solid-svg-icons': ['pause','ban','play','times','plus'],
   };
 };
