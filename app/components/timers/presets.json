@@ -1,0 +1,80 @@
+[
+  {
+    "Name" : "Pomodoro",
+    "Runtime_In_Minutes" : 25,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Break 5",
+    "Runtime_In_Minutes" : 5,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Break 10",
+    "Runtime_In_Minutes" : 10,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Break 20",
+    "Runtime_In_Minutes" : 20,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Break 30",
+    "Runtime_In_Minutes" : 30,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : " Meeting 5",
+    "Runtime_In_Minutes" : 5,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Meeting 15",
+    "Runtime_In_Minutes" : 15,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Meeting 30",
+    "Runtime_In_Minutes" : 30,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Meeting 45",
+    "Runtime_In_Minutes" : 45,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Meeting 60",
+    "Runtime_In_Minutes" : 60,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Exercise 7",
+    "Runtime_In_Minutes" : 7,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Exercise 20",
+    "Runtime_In_Minutes" : 20,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  },
+  {
+    "Name" : "Exercise 30",
+    "Runtime_In_Minutes" : 30,
+    "Is_Countdown": true,
+    "Play_Sound_When_Done": false
+  }
+]

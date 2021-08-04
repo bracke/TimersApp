@@ -1,0 +1,32 @@
+{{#if this.Display_Create_Dialog}}
+
+  <Timers::Create
+    @cancel={{this.cancelCreateDialog}}
+    @addTimer={{this.addTimer}}
+    @presets={{this.Presets}}
+  />
+
+{{else}}
+
+  <button
+    type="button"
+    class="btn btn-primary btn-md"
+    {{on 'click' (fn (mut this.Display_Create_Dialog) true)}}
+    data-test-add-button
+  >
+    <FaIcon @icon="plus" />
+    Add timer
+  </button>
+
+{{/if}}
+<br />
+<div class="timers_liste">
+  {{#each this.Timers key='@index' as |timer|}}
+
+    <Timers::Item
+      @timer={{timer}}
+      @close={{this.close}}
+    />
+
+  {{/each}}
+</div>

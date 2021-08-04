@@ -1,0 +1,113 @@
+<div
+  class="timers_item bd-callout bd-callout-info"
+>
+  <h5>
+    {{@timer.name}}
+  </h5>
+  <div class="data">
+    <div>
+      <p>
+        {{#if @timer.running}}
+          <button
+            type="button"
+            class="btn btn-warning btn-sm"
+            data-test-stop-button
+            {{on 'click' (fn this.stop @timer)}}
+          >
+            <FaIcon @icon="pause" />
+            Pause
+          </button>
+        {{else}}
+          <button
+            type="button"
+            class="btn btn-success btn-sm"
+            data-test-start-button
+            {{on 'click' (fn this.start @timer)}}
+          >
+            <FaIcon @icon="play" />
+            Start
+          </button>
+        {{/if}}
+        <button
+          type="button"
+          class="btn btn-danger btn-sm"
+          data-test-reset-button
+          {{on 'click' (fn this.reset @timer)}}
+        >
+          <FaIcon @icon="ban" />
+          Reset
+        </button>
+        <div class="section">
+          <label>
+            Runtime
+          </label>
+          <br />
+          <div class="number" data-test-runtime>
+            {{@timer.runtime_timestring}}
+          </div>
+        </div>
+        {{#if @timer.is_countdown}}
+          <div
+            class="section"
+            data-test-countdown>
+            <label>
+              Countdown
+            </label>
+            <br />
+            <div class="number">
+              {{@timer.time_until_timestring}}
+            </div>
+          </div>
+        {{/if}}
+      </p>
+    </div>
+    <div>
+      {{#if @timer.is_countdown}}
+        <svg
+          class="CircularProgress"
+          width="150"
+          height="150"
+          viewBox="0 0 150 150"
+          data-test-progresscircle
+        >
+          <circle
+            class="CircularProgress-Bg"
+            cx="75"
+            cy="75"
+            r="50"
+            stroke-width="10px"
+          ></circle>
+          <circle
+            transform="rotate(-90 75 75)"
+            class="CircularProgress-Fg"
+            cx="75"
+            cy="75"
+            r="50"
+            stroke-width="10px"
+            stroke-dasharray="{{mult @timer.completion_percentage (div 314 100)}}
+               314"
+          >
+          </circle>
+          <text
+            class="CircularProgress-Text"
+            x="75"
+            y="75"
+            dy=".4em"
+            text-anchor="middle"
+          >
+            {{@timer.completion_percentage}}
+            %
+          </text>
+        </svg>
+      {{/if}}
+    </div>
+  </div>
+  <FaIcon
+    @icon="times"
+    rel="button"
+    class="close_icon"
+    data-test-close-button
+    {{on 'click' (fn @close @timer)}}
+  />
+</div>
+{{yield}}
