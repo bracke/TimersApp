@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      Timers by Bent Bracke
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      {{on 'click' (fn (mut this.show) (not this.show))}}
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse {{if this.show 'show'}}"
+      id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <LinkTo @route="index" class="nav-link">
+            Timers
+          </LinkTo>
+        </li>
+        <li class="nav-item">
+          <LinkTo @route="about" class="nav-link">
+            About
+          </LinkTo>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{yield}}
