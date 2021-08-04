@@ -1,8 +1,11 @@
 {{page-title "Timers"}}
-<article class="intro">
-  Click on the 'Add Timer' button to create a timer or countdown. You can create as many as you like.<br>
-</article>
-<div class="bootstrapstyles mt-3" >
-  <Timers::List />
+{{#if this.Started}}
+{{else}}
+  <article class="intro mb-3">
+    Click on the 'Add Timer' button to create a timer or countdown. You can create as many as you like.<br>
+  </article>
+{{/if}}
+<div class="bootstrapstyles" >
+  <Timers::List @started={{this.started}}/>
 </div>
 {{outlet}}

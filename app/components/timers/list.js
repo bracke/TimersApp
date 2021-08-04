@@ -6,7 +6,6 @@ import timer from './timer';
 import presets from './presets';
 
 export default class TimersListComponent extends Component {
-
   Timers;
   Max_Id;
   Presets;
@@ -37,7 +36,11 @@ export default class TimersListComponent extends Component {
   cancelCreateDialog() {
     this.Display_Create_Dialog = false;
   }
-
+  @action
+  addButtonClicked() {
+    this.Display_Create_Dialog = true;
+    this.args.started();
+  }
   @action
   addTimer(
     New_Timer_Name,

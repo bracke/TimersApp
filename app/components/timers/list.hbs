@@ -11,7 +11,7 @@
   <button
     type="button"
     class="btn btn-primary btn-md"
-    {{on 'click' (fn (mut this.Display_Create_Dialog) true)}}
+    {{on 'click' this.addButtonClicked}}
     data-test-add-button
   >
     <FaIcon @icon="plus" />

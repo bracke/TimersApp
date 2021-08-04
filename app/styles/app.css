@@ -31,3 +31,9 @@ article.intro {
   right: 1rem;
   top: 0.1rem;
 }
+footer {
+  height: 40px;
+}
+main {
+  min-height: calc(100vh - 96px);
+}
