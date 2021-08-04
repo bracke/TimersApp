@@ -1,15 +1,15 @@
-<div class="timers_create">
-  <h5>
-    Add timer
-  </h5>
+<div class="timers_create position-relative">
+  <h5>Add timer</h5>
+  <Timers::PresetMenu
+    @presets={{@presets}}
+    @setPreset={{this.Preset}}
+    class="PresetMenu"
+  />
+
   <div class="body">
-    <div class="details">
       <div class="data">
         <div class="section">
-          <label for="Timer_Name">
-            Name
-          </label>
-          <br />
+          <label for="Timer_Name">Name</label><br />
           <Input
             class="form-control"
             placeholder="timer name"
@@ -19,10 +19,7 @@
           />
         </div>
         <div class="section">
-          <label for="New_Timer_Is_Countdown">
-            Countdown
-          </label>
-          <br />
+          <label for="New_Timer_Is_Countdown">Countdown</label><br />
           <Input
             class="form-check-input"
             @type="checkbox"
@@ -33,10 +30,7 @@
         </div>
         {{#if this.New_Timer_Is_Countdown}}
           <div class="section">
-            <label for="Timer_Target_Runtime">
-              Time in minutes
-            </label>
-            <br />
+            <label for="Timer_Target_Runtime">Time in minutes</label><br />
             <Input
               class="form-control"
               placeholder="Time in minutes"
@@ -47,10 +41,7 @@
             />
           </div>
           <div class="section">
-            <label for="New_Timer_Is_Countdown">
-              Play sound when done
-            </label>
-            <br />
+            <label for="New_Timer_Is_Countdown">Play sound when done</label><br />
             <Input
               class="form-check-input"
               @type="checkbox"
@@ -58,38 +49,15 @@
               id="New_Timer_Play_Sound_When_Done"
               data-test-play-sound-when-done
             />
-           </div>
+          </div>
         {{/if}}
       </div>
-      <div class="button_list">
-        <label>
-          Presets
-        </label>
-        <p>
-          {{#each @presets as |aPreset|}}
-            <button
-              type="button"
-              class="btn btn-secondary btn-sm"
-              {{on 'click' (fn this.Preset
-                aPreset.Name
-                aPreset.Runtime_In_Minutes
-                aPreset.Is_Countdown
-                aPreset.Play_Sound_When_Done)
-              }}
-              data-test-preset-button
-            >
-              {{aPreset.Name}}
-            </button>
-          {{/each}}
-        </p>
-      </div>
-    </div>
   </div>
   <button
     type="button"
     class="btn btn-secondary btn-sm"
-    {{on 'click' @cancel}}
     data-test-cancel-button
+    {{on 'click' @cancel}}
   >
     <FaIcon @icon="ban" />
     Cancel
@@ -97,8 +65,8 @@
   <button
     type="button"
     class="btn btn-primary btn-sm"
-    {{on 'click' this.addTimer}}
     data-test-add-button
+    {{on 'click' this.addTimer}}
   >
     <FaIcon @icon="plus" />
     Add

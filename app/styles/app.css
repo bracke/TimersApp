@@ -1,19 +1,33 @@
 .bd-callout {
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0rem;
   border: 1px solid #e9ecef;
   border-left-width: .25rem;
   border-radius: .25rem;
 }
 
+@media only screen and (max-device-width: 736px) {
+  .bd-callout {
+    width: 100%;
+  }
+}
+
 .bd-callout-info {
   border-left-color: #5bc0de;
 }
+
 main {
   padding: 0.75rem;
 }
-article.intro
-{
+
+article.intro {
   font-style: italic;
+}
+
+.PresetMenu {
+  min-width: 160px;
+  position: absolute;
+  right: 1rem;
+  top: 0.1rem;
 }

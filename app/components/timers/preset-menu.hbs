@@ -1,0 +1,44 @@
+<div ...attributes>
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="presetDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        {{on 'click' (fn (toggle "show" this))}}
+      >
+        Presets
+      </a>
+      <ul class="dropdown-menu {{if this.show 'show'}}" aria-labelledby="presetDropdownMenuLink">
+        {{#each @presets as |aPreset|}}
+          <li>
+            <a
+              href="#"
+              class="dropdown-item"
+              data-test-preset-button
+              {{on
+                'click'
+                (queue
+                  (fn
+                    @setPreset
+                    aPreset.Name
+                    aPreset.Runtime_In_Minutes
+                    aPreset.Is_Countdown
+                    aPreset.Play_Sound_When_Done
+                  )
+                  (toggle "show" this)
+                )
+              }}
+            >
+              {{aPreset.Name}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+</div>
+{{yield}}

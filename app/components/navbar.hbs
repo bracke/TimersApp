@@ -20,17 +20,20 @@
       id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <LinkTo @route="intro" class="nav-link">
+          <LinkTo @route="intro" {{on 'click' (toggle 'show' this)}}
+          class="nav-link">
             Introduktion
           </LinkTo>
         </li>
         <li class="nav-item">
-          <LinkTo @route="index" class="nav-link">
+          <LinkTo @route="index" {{on "click" (toggle "show" this)}} class="nav-link">
             Timers
           </LinkTo>
         </li>
         <li class="nav-item">
-          <LinkTo @route="about" class="nav-link">
+          <LinkTo @route="about"
+          {{on 'click' (toggle 'show' this)}}
+          class="nav-link">
             About
           </LinkTo>
         </li>
