@@ -4,9 +4,13 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    newVersion: {
+      enabled: true,
+      useAppVersion: true
+    },
     'ember-service-worker': {
       registrationStrategy: 'inline',
-      versionStrategy: 'every-build'
+      versionStrategy: 'every-build',
     },
   });
 

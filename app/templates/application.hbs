@@ -1,4 +1,9 @@
 {{page-title "TimersApp"}}
+<NewVersionNotifier
+  @updateMessage="A new version was released: {newVersion}"
+  @updateInterval={{150000}}
+  @showReload={{true}}
+/>
 <Navbar />
 <main>
 {{outlet}}
