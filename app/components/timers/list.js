@@ -13,36 +13,55 @@ export default class TimersListComponent extends Component {
   Presets;
 
   @service store;
-  @tracked Display_Create_Dialog;
+  @tracked state;
 
-  constructor() {
-    super(...arguments);
-
-    this.Display_Create_Dialog = false;
-    this.Max_Id = 0;
-    this.Timers = new TrackedArray([]);
-
+  Load_UI_State() {
+    let that = this;
+    this.store.findAll('uistate').then(function (fetched_UI_State) {
+      if (fetched_UI_State.length > 0) {
+        that.state = fetched_UI_State.firstObject;
+      }
+      else {
+        that.state = that.store.createRecord('uistate', {
+          display_create_dialog: false,
+          started: false
+        });
+        that.state.save();
+      }
+    });
+  }
+  Load_Presets() {
     let that = this;
     this.store.findAll('preset').then(function (fetchedPresets) {
       if (fetchedPresets.length == 0) {
-        console.log('presetStorage is empty');
-
         presets.forEach((element) => {
-          let aPReset = that.store.createRecord('preset', {
+          let aPreset = that.store.createRecord('preset', {
             name: element.name,
             runtime_in_minutese: element.runtime_in_minutese,
             is_countdown: element.is_countdown,
             play_sound_when_done: element.play_sound_when_done,
           });
-          aPReset.save();
-          that.store.findAll('preset').then(function (fetchedNewlyCreatedPresets) {
-            that.Presets = fetchedNewlyCreatedPresets;
-          });
+          aPreset.save();
+          that.store
+            .findAll('preset')
+            .then(function (fetchedNewlyCreatedPresets) {
+              that.Presets = fetchedNewlyCreatedPresets;
+            });
         });
       } else {
         that.Presets = fetchedPresets;
       }
     });
+  }
+  constructor() {
+    super(...arguments);
+
+    this.Max_Id = 0;
+    this.Timers = new TrackedArray([]);
+
+    this.Load_Presets();
+    this.Load_UI_State();
+    // this.Load_Timers()
   }
   @action
   close(aTimer) {
@@ -57,11 +76,15 @@ export default class TimersListComponent extends Component {
   }
   @action
   cancelCreateDialog() {
-    this.Display_Create_Dialog = false;
+    this.state.display_create_dialog = false;
+    this.state.save();
   }
   @action
   addButtonClicked() {
-    this.Display_Create_Dialog = true;
+    this.state.display_create_dialog = true;
+    this.state.started = true;
+    this.state.save();
+
     this.args.started();
   }
   @action
@@ -80,6 +103,7 @@ export default class TimersListComponent extends Component {
         New_Timer_Play_Sound_When_Done
       )
     );
-    this.Display_Create_Dialog = false;
+    this.state.display_create_dialog = false;
+    this.state = this.state;
   }
 }
