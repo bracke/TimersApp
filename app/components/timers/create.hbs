@@ -20,12 +20,11 @@
         </div>
         <div class="section">
           <label for="New_Timer_Is_Countdown">Countdown</label><br />
-          <Input
-            class="form-check-input"
-            @type="checkbox"
-            @checked={{this.New_Timer_Is_Countdown}}
-            id="New_Timer_Is_Countdown"
+          <XToggle
+            @value={{this.New_Timer_Is_Countdown}}
+            @onToggle={{fn (mut this.New_Timer_Is_Countdown)}}
             data-test-iscountdown
+            id="New_Timer_Is_Countdown"
           />
         </div>
         {{#if this.New_Timer_Is_Countdown}}
@@ -42,12 +41,12 @@
           </div>
           <div class="section">
             <label for="New_Timer_Is_Countdown">Play sound when done</label><br />
-            <Input
-              class="form-check-input"
-              @type="checkbox"
-              @checked={{this.New_Timer_Play_Sound_When_Done}}
-              id="New_Timer_Play_Sound_When_Done"
+
+            <XToggle
+              @value={{this.New_Timer_Play_Sound_When_Done}}
+              @onToggle={{fn (mut this.New_Timer_Play_Sound_When_Done)}}
               data-test-play-sound-when-done
+              id="New_Timer_Play_Sound_When_Done"
             />
           </div>
         {{/if}}

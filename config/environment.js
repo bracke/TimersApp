@@ -21,7 +21,11 @@ module.exports = function (environment) {
       // when it is created
     },
   };
-
+ENV['ember-toggle'] = {
+  includedThemes: ['ios'],
+  defaultTheme: 'ios',
+  variant : 'auto'
+};
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
