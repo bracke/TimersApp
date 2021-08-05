@@ -2,6 +2,8 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from 'tracked-built-ins';
 import { TrackedArray } from 'tracked-built-ins';
+import { inject as service } from '@ember/service';
+import store from '@ember-data/store';
 import timer from './timer';
 import presets from './presets';
 
@@ -10,6 +12,7 @@ export default class TimersListComponent extends Component {
   Max_Id;
   Presets;
 
+  @service store;
   @tracked Display_Create_Dialog;
 
   constructor() {
@@ -19,7 +22,27 @@ export default class TimersListComponent extends Component {
     this.Max_Id = 0;
     this.Timers = new TrackedArray([]);
 
-    this.Presets = presets;
+    let that = this;
+    this.store.findAll('preset').then(function (fetchedPresets) {
+      if (fetchedPresets.length == 0) {
+        console.log('presetStorage is empty');
+
+        presets.forEach((element) => {
+          let aPReset = that.store.createRecord('preset', {
+            name: element.name,
+            runtime_in_minutese: element.runtime_in_minutese,
+            is_countdown: element.is_countdown,
+            play_sound_when_done: element.play_sound_when_done,
+          });
+          aPReset.save();
+          that.store.findAll('preset').then(function (fetchedNewlyCreatedPresets) {
+            that.Presets = fetchedNewlyCreatedPresets;
+          });
+        });
+      } else {
+        that.Presets = fetchedPresets;
+      }
+    });
   }
   @action
   close(aTimer) {

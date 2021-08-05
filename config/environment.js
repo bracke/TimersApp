@@ -3,6 +3,9 @@
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'timers-app',
+    'ember-local-storage': {
+      namespace: false, // will use the modulePrefix e.g. 'my-app'
+    },
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -26,6 +29,8 @@ module.exports = function (environment) {
     defaultTheme: 'ios',
     variant : 'auto'
   };
+  const pkg = require('../package.json');
+
   ENV['ember-cli-app-version'] = {
     version: `${pkg.version}`,
   };

@@ -24,16 +24,16 @@
                 (queue
                   (fn
                     @setPreset
-                    aPreset.Name
-                    aPreset.Runtime_In_Minutes
-                    aPreset.Is_Countdown
-                    aPreset.Play_Sound_When_Done
+                    aPreset.name
+                    aPreset.runtime_in_minutes
+                    aPreset.is_countdown
+                    aPreset.play_sound_when_done
                   )
                   (toggle "show" this)
                 )
               }}
             >
-              {{aPreset.Name}}
+              {{aPreset.name}}
             </a>
           </li>
         {{/each}}
