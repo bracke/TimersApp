@@ -76,13 +76,12 @@ export default class TimersListComponent extends Component {
   }
   @action
   close(aTimer) {
+    console.log("close timer");
     clearInterval(aTimer.timer);
     aTimer.running = false;
-   // aTimer.AudioContext.close();
 
-    aTimer.deleteRecord;
+    aTimer.deleteRecord();
     aTimer.save();
-
   }
   @action
   cancelCreateDialog() {
