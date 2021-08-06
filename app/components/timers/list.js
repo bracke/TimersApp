@@ -3,10 +3,9 @@ import { action } from '@ember/object';
 import { tracked } from 'tracked-built-ins';
 import { TrackedArray } from 'tracked-built-ins';
 import { inject as service } from '@ember/service';
+import Timer from './timer';
 import store from '@ember-data/store';
-import timer from './timer';
 import presets from './presets';
-
 export default class TimersListComponent extends Component {
   Timers;
   Max_Id;
@@ -14,17 +13,30 @@ export default class TimersListComponent extends Component {
 
   @service store;
   @tracked state;
+  @tracked timers;
 
+  Load_Timers() {
+    let that = this;
+    this.store.findAll('timer').then(function (fetched_Timers) {
+
+      that.timers = fetched_Timers;
+
+      fetched_Timers.forEach(function (aTimer) {
+        if (aTimer.running) {
+          Timer.start(aTimer);
+        }
+      });
+    });
+  }
   Load_UI_State() {
     let that = this;
     this.store.findAll('uistate').then(function (fetched_UI_State) {
       if (fetched_UI_State.length > 0) {
         that.state = fetched_UI_State.firstObject;
-      }
-      else {
+      } else {
         that.state = that.store.createRecord('uistate', {
           display_create_dialog: false,
-          started: false
+          started: false,
         });
         that.state.save();
       }
@@ -37,7 +49,7 @@ export default class TimersListComponent extends Component {
         presets.forEach((element) => {
           let aPreset = that.store.createRecord('preset', {
             name: element.name,
-            runtime_in_minutese: element.runtime_in_minutese,
+            runtime_in_minutes: element.runtime_in_minutes,
             is_countdown: element.is_countdown,
             play_sound_when_done: element.play_sound_when_done,
           });
@@ -57,22 +69,20 @@ export default class TimersListComponent extends Component {
     super(...arguments);
 
     this.Max_Id = 0;
-    this.Timers = new TrackedArray([]);
 
     this.Load_Presets();
     this.Load_UI_State();
-    // this.Load_Timers()
+    this.Load_Timers();
   }
   @action
   close(aTimer) {
-    aTimer.stop();
-    aTimer.AudioContext.close();
+    clearInterval(aTimer.timer);
+    aTimer.running = false;
+   // aTimer.AudioContext.close();
 
-    // Remove timer from array
-    const index = this.Timers.findIndex((v) => v.Id === aTimer.Id);
-    if (index > -1) {
-      this.Timers.splice(index, 1);
-    }
+    aTimer.deleteRecord;
+    aTimer.save();
+
   }
   @action
   cancelCreateDialog() {
@@ -94,16 +104,15 @@ export default class TimersListComponent extends Component {
     New_Timer_Is_Countdown,
     New_Timer_Play_Sound_When_Done
   ) {
-    this.Timers.push(
-      new timer(
-        this.Max_Id++,
-        New_Timer_Name,
-        New_Timer_Target_Runtime_In_Minutes * 60,
-        New_Timer_Is_Countdown,
-        New_Timer_Play_Sound_When_Done
-      )
-    );
+    let aTimer = this.store.createRecord('timer', {
+      name: New_Timer_Name,
+      target_runtime: New_Timer_Target_Runtime_In_Minutes * 60,
+      is_countdown: New_Timer_Is_Countdown,
+      play_sound_when_done: New_Timer_Play_Sound_When_Done
+    });
+    aTimer.save();
+
     this.state.display_create_dialog = false;
-    this.state = this.state;
+    this.state.save();
   }
 }

@@ -1,14 +1,19 @@
 import Component from '@glimmer/component';
-
+import Timer from './timer';
 export default class TimersItemComponent extends Component {
 
+
+
   start(aTimer) {
-    aTimer.start();
+    Timer.start(aTimer);
+    aTimer.save();
   }
   stop(aTimer) {
-    aTimer.stop();
+    Timer.stop(aTimer);
+    aTimer.save();
   }
   reset(aTimer) {
-    aTimer.reset();
+    Timer.reset();
+    aTimer.save();
   }
 }

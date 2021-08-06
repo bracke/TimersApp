@@ -28,7 +28,7 @@ export default class TimersCreateComponent extends Component {
   }
   @action
   addTimer() {
-    // TODO: Validate newtime before creation
+    // TODO: Validate New_Timer before creation
     this.args.addTimer(
       this.New_Timer_Name,
       this.New_Timer_Target_Runtime_In_Minutes,

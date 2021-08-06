@@ -8,11 +8,12 @@
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        data-test-presetmenu-open-button
         {{on 'click' (fn (toggle "show" this))}}
       >
         Presets
       </a>
-      <ul class="dropdown-menu {{if this.show 'show'}}" aria-labelledby="presetDropdownMenuLink">
+      <ul data-test-preset-menu-dropdown class="dropdown-menu {{if this.show 'show'}}" aria-labelledby="presetDropdownMenuLink">
         {{#each @presets as |aPreset|}}
           <li>
             <a
