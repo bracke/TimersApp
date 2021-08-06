@@ -33,7 +33,7 @@ module('Integration | Component | timers/item', function (hooks) {
 
     assert.dom('[data-test-runtime]').exists();
     assert.dom('[data-test-countdown]').doesNotExist();
-    assert.dom('[data-test-progresscircle]').doesNotExist();
+    assert.dom('[data-test-progress-circle]').doesNotExist();
   });
 
   test('it renders with countdown', async function (assert) {
@@ -61,6 +61,6 @@ module('Integration | Component | timers/item', function (hooks) {
 
     assert.dom('[data-test-runtime]').exists();
     assert.dom('[data-test-countdown]').exists();
-    assert.dom('[data-test-progresscircle]').exists();
+    assert.dom('[data-test-progress-circle]').exists();
   });
 });

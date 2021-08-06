@@ -33,10 +33,10 @@ module('Integration | Component | preset-menu', function(hooks) {
     />`);
     assert.dom('[data-test-preset-button]').exists({ count: 2 });
     assert.dom('[data-test-preset-button]').includesText('Pomodoro');
-    assert.dom('[data-test-presetmenu-open-button]').isVisible();
+    assert.dom('[data-test-preset-menu-open-button]').isVisible();
     assert.dom('[data-test-preset-menu-dropdown]').isNotVisible();
 
-    await click('[data-test-presetmenu-open-button]');
+    await click('[data-test-preset-menu-open-button]');
     assert.dom('[data-test-preset-menu-dropdown]').isVisible();
 
   });
@@ -87,7 +87,7 @@ module('Integration | Component | preset-menu', function(hooks) {
           class="PresetMenu"
         />`);
 
-    await click('[data-test-presetmenu-open-button]');
+    await click('[data-test-preset-menu-open-button]');
     await click('[data-test-preset-button]');
 
 

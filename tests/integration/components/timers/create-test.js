@@ -38,15 +38,15 @@ module('Integration | Component | timers/create', function (hooks) {
     assert.dom('[data-test-timer_name]').exists();
     assert.dom('[data-test-is-countdown]').exists();
 
-    // Targetruntime and play-sound-when-done
+    // target-runtime and play-sound-when-done
     // should not be visible unless countdown is selected.
-    assert.dom('[data-test-targetruntime]').doesNotExist();
+    assert.dom('[data-test-target-runtime]').doesNotExist();
     assert.dom('[data-test-play-sound-when-done]').doesNotExist();
 
     assert.dom('[data-test-is-countdown]').exists();
 
     await click('[data-test-is-countdown] .x-toggle');
-    assert.dom('[data-test-targetruntime]').exists();
+    assert.dom('[data-test-target-runtime]').exists();
     assert.dom('[data-test-play-sound-when-done]').exists();
 
 

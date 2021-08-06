@@ -1,6 +1,6 @@
 export default class Timer {
 
-  static AudioContext = new AudioContext(); // browsers limit the number of concurrent audio contexts, so you better re-use'em
+  static AudioContext = new AudioContext(); // browsers limit the number of concurrent audio contexts, so you better re-use them
 
   static beep(vol, freq, duration) {
     v = AudioContext.createOscillator();
