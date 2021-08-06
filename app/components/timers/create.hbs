@@ -1,69 +1,87 @@
 <div class="timers_create position-relative">
-  <h5>Add timer</h5>
+  <h5>
+    {{t 'create.title'}}
+  </h5>
   <Timers::PresetMenu
     @presets={{@presets}}
     @setPreset={{this.Preset}}
     class="PresetMenu"
   />
-
   <div class="body">
-      <div class="data">
+    <div class="data">
+      <div class="section">
+        <label for="Timer_Name">
+          {{t 'create.Timer_Name_Label'}}
+        </label>
+        <br />
+        <Input
+          class="form-control
+            {{if this.New_Timer_Name_IsValid '' 'border-danger'}}"
+          placeholder="timer name"
+          id="Timer_Name"
+          @value={{this.New_Timer_Name}}
+          data-test-timer_name
+          {{autofocus}}
+        />
+        {{#unless this.New_Timer_Name_IsValid}}
+          <span class="text-danger">
+            {{t 'create.Timer_Name_Validation_Message'}}
+          </span>
+        {{/unless}}
+      </div>
+      <div class="section">
+        <label for="New_Timer_Is_Countdown">
+          {{t 'create.Timer_Countdown_Label'}}
+        </label>
+        <br />
+        <XToggle
+          @value={{this.New_Timer_Is_Countdown}}
+          @onToggle={{fn (mut this.New_Timer_Is_Countdown)}}
+          data-test-is-countdown
+          id="New_Timer_Is_Countdown"
+        />
+      </div>
+      {{#if this.New_Timer_Is_Countdown}}
         <div class="section">
-          <label for="Timer_Name">Name</label><br />
+          <label for="Timer_Target_Runtime">
+            {{t 'create.Timer_Target_Runtime'}}
+          </label>
+          <br />
           <Input
-            class="form-control {{if this.New_Timer_Name_IsValid '' 'border-danger'}}"
-            placeholder="timer name"
-            id="Timer_Name"
-            @value={{this.New_Timer_Name}}
-            data-test-timer_name
-            {{autofocus}}
+            class="form-control
+              {{if
+                this.New_Timer_Target_Runtime_In_Minutes_IsValid
+                ''
+                'border-danger'
+              }}"
+            @type="number"
+            id="Timer_Target_Runtime"
+            @value={{this.New_Timer_Target_Runtime_In_Minutes}}
+            data-test-target-runtime
+            min="1"
+            max="1440"
           />
-          {{#unless this.New_Timer_Name_IsValid}}
+          {{#unless this.New_Timer_Target_Runtime_In_Minutes_IsValid}}
             <span class="text-danger">
-              Please name the timer
+              {{t "create.Timer_Target_Runtime_Validation_Message"}}
             </span>
           {{/unless}}
         </div>
         <div class="section">
-          <label for="New_Timer_Is_Countdown">Countdown</label><br />
+          <label for="New_Timer_Play_Sound_When_Done">
+            {{t "create.Timer_Play_Sound_When_Done_Label"}}
+          </label>
+          <br />
           <XToggle
-            @value={{this.New_Timer_Is_Countdown}}
-            @onToggle={{fn (mut this.New_Timer_Is_Countdown)}}
-            data-test-is-countdown
-            id="New_Timer_Is_Countdown"
+            @value={{this.New_Timer_Play_Sound_When_Done}}
+            @onToggle={{fn (mut this.New_Timer_Play_Sound_When_Done)}}
+            data-test-play-sound-when-done
+            id="New_Timer_Play_Sound_When_Done"
           />
         </div>
-        {{#if this.New_Timer_Is_Countdown}}
-          <div class="section">
-            <label for="Timer_Target_Runtime">Time in minutes</label><br />
-            <Input
-              class="form-control {{if this.New_Timer_Target_Runtime_In_Minutes_IsValid '' 'border-danger'}}"
-              placeholder="Time in minutes"
-              @type="number"
-              id="Timer_Target_Runtime"
-              @value={{this.New_Timer_Target_Runtime_In_Minutes}}
-              data-test-target-runtime
-              min="1"
-              max="1440"
-            />
-            {{#unless this.New_Timer_Target_Runtime_In_Minutes_IsValid}}
-              <span class="text-danger">Please use a valid number, larger than 0 and less than a day</span>
-            {{/unless}}
-          </div>
-          <div class="section">
-            <label for="New_Timer_Play_Sound_When_Done">Play sound when done</label><br />
-
-            <XToggle
-              @value={{this.New_Timer_Play_Sound_When_Done}}
-              @onToggle={{fn (mut this.New_Timer_Play_Sound_When_Done)}}
-              data-test-play-sound-when-done
-              id="New_Timer_Play_Sound_When_Done"
-            />
-          </div>
-        {{/if}}
-      </div>
+      {{/if}}
+    </div>
   </div>
-
   <button
     type="button"
     class="btn btn-secondary btn-sm"
@@ -71,7 +89,7 @@
     {{on 'click' @cancel}}
   >
     <FaIcon @icon="ban" />
-    Cancel
+    {{t "create.Cancel_Button_Name"}}
   </button>
   <button
     type="button"
@@ -80,6 +98,6 @@
     {{on 'click' this.addTimer}}
   >
     <FaIcon @icon="plus" />
-    Add
+    {{t "create.Add_Button_Name"}}
   </button>
 </div>

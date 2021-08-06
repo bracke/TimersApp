@@ -1,10 +1,8 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from 'tracked-built-ins';
-import { TrackedArray } from 'tracked-built-ins';
 import { inject as service } from '@ember/service';
 import Timer from './timer';
-import store from '@ember-data/store';
 import presets from './presets';
 export default class TimersListComponent extends Component {
   Timers;
@@ -18,7 +16,6 @@ export default class TimersListComponent extends Component {
   Load_Timers() {
     let that = this;
     this.store.findAll('timer').then(function (fetched_Timers) {
-
       that.timers = fetched_Timers;
 
       fetched_Timers.forEach(function (aTimer) {
@@ -76,7 +73,7 @@ export default class TimersListComponent extends Component {
   }
   @action
   close(aTimer) {
-    console.log("close timer");
+    console.log('close timer');
     clearInterval(aTimer.timer);
     aTimer.running = false;
 
@@ -107,7 +104,7 @@ export default class TimersListComponent extends Component {
       name: New_Timer_Name,
       target_runtime: New_Timer_Target_Runtime_In_Minutes * 60,
       is_countdown: New_Timer_Is_Countdown,
-      play_sound_when_done: New_Timer_Play_Sound_When_Done
+      play_sound_when_done: New_Timer_Play_Sound_When_Done,
     });
     aTimer.save();
 

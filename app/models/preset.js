@@ -5,5 +5,4 @@ export default class PresetModel extends Model {
   @attr runtime_in_minutes;
   @attr is_countdown;
   @attr play_sound_when_done;
-
 }

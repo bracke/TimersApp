@@ -3,28 +3,28 @@ import { setupRenderingTest } from 'ember-qunit';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | preset-menu', function(hooks) {
+module('Integration | Component | preset-menu', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-     this.set('Presets', [
-       {
-         name: 'Pomodoro',
-         runtime_in_minutes: 25,
-         is_countdown: true,
-         play_sound_when_done: false,
-       },
-       {
-         name: 'Break',
-         runtime_in_minutes: 5,
-         is_countdown: true,
-         play_sound_when_done: false,
-       },
-     ]);
-    this.set('setPreset', function (val) {});
+    this.set('Presets', [
+      {
+        name: 'Pomodoro',
+        runtime_in_minutes: 25,
+        is_countdown: true,
+        play_sound_when_done: false,
+      },
+      {
+        name: 'Break',
+        runtime_in_minutes: 5,
+        is_countdown: true,
+        play_sound_when_done: false,
+      },
+    ]);
+    this.set('setPreset', function () {});
 
     await render(hbs`<Timers::PresetMenu
       @presets={{this.Presets}}
@@ -38,11 +38,9 @@ module('Integration | Component | preset-menu', function(hooks) {
 
     await click('[data-test-preset-menu-open-button]');
     assert.dom('[data-test-preset-menu-dropdown]').isVisible();
-
   });
 
   test('Triggers external action on select', async function (assert) {
-
     assert.expect(4);
 
     this.set('Presets', [
@@ -89,8 +87,5 @@ module('Integration | Component | preset-menu', function(hooks) {
 
     await click('[data-test-preset-menu-open-button]');
     await click('[data-test-preset-button]');
-
-
   });
-
 });

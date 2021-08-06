@@ -1,79 +1,79 @@
 [
   {
-    "name" : "Pomodoro",
-    "runtime_in_minutes" : 25,
+    "name": "Pomodoro",
+    "runtime_in_minutes": 25,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Break 5",
-    "runtime_in_minutes" : 5,
+    "name": "Break 5",
+    "runtime_in_minutes": 5,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Break 10",
-    "runtime_in_minutes" : 10,
+    "name": "Break 10",
+    "runtime_in_minutes": 10,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Break 20",
-    "runtime_in_minutes" : 20,
+    "name": "Break 20",
+    "runtime_in_minutes": 20,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Break 30",
-    "runtime_in_minutes" : 30,
+    "name": "Break 30",
+    "runtime_in_minutes": 30,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : " Meeting 5",
-    "runtime_in_minutes" : 5,
+    "name": " Meeting 5",
+    "runtime_in_minutes": 5,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Meeting 15",
-    "runtime_in_minutes" : 15,
+    "name": "Meeting 15",
+    "runtime_in_minutes": 15,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Meeting 30",
-    "runtime_in_minutes" : 30,
+    "name": "Meeting 30",
+    "runtime_in_minutes": 30,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Meeting 45",
-    "runtime_in_minutes" : 45,
+    "name": "Meeting 45",
+    "runtime_in_minutes": 45,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Meeting 60",
-    "runtime_in_minutes" : 60,
+    "name": "Meeting 60",
+    "runtime_in_minutes": 60,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Exercise 7",
-    "runtime_in_minutes" : 7,
+    "name": "Exercise 7",
+    "runtime_in_minutes": 7,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Exercise 20",
-    "runtime_in_minutes" : 20,
+    "name": "Exercise 20",
+    "runtime_in_minutes": 20,
     "is_countdown": true,
     "play_sound_when_done": false
   },
   {
-    "name" : "Exercise 30",
-    "runtime_in_minutes" : 30,
+    "name": "Exercise 30",
+    "runtime_in_minutes": 30,
     "is_countdown": true,
     "play_sound_when_done": false
   }

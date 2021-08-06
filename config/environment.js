@@ -27,7 +27,7 @@ module.exports = function (environment) {
   ENV['ember-toggle'] = {
     includedThemes: ['ios'],
     defaultTheme: 'ios',
-    variant : 'auto'
+    variant: 'auto',
   };
   const pkg = require('../package.json');
 

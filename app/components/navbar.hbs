@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      Timers by Bent Bracke
+      {{t "navbar.brand"}}
     </a>
     <button
       class="navbar-toggler"
@@ -18,24 +18,34 @@
     </button>
     <div
       class="collapse navbar-collapse {{if this.show 'show'}}"
-      id="navbarNav">
+      id="navbarNav"
+    >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <LinkTo @route="intro" {{on 'click' (toggle 'show' this)}}
-          class="nav-link">
-            Introduktion
+          <LinkTo
+            @route="intro"
+            class="nav-link"
+            {{on 'click' (toggle 'show' this)}}
+          >
+            {{t 'navbar.intro_label'}}
           </LinkTo>
         </li>
         <li class="nav-item">
-          <LinkTo @route="index" {{on "click" (toggle "show" this)}} class="nav-link">
-            Timers
+          <LinkTo
+            @route="index"
+            class="nav-link"
+            {{on 'click' (toggle 'show' this)}}
+          >
+            {{t 'navbar.timers_label'}}
           </LinkTo>
         </li>
         <li class="nav-item">
-          <LinkTo @route="about"
-          {{on 'click' (toggle 'show' this)}}
-          class="nav-link">
-            About
+          <LinkTo
+            @route="about"
+            class="nav-link"
+            {{on 'click' (toggle 'show' this)}}
+          >
+            {{t 'navbar.about_label'}}
           </LinkTo>
         </li>
       </ul>

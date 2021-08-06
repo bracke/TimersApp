@@ -13,6 +13,5 @@ module('Integration | Component | timers/list', function (hooks) {
     await render(hbs`<Timers::List />`);
 
     assert.dom('[data-test-add-button]').exists();
-
   });
 });

@@ -45,5 +45,4 @@ export default class TimerModel extends Model {
       return Math.trunc((this.runtime * 100) / this.target_runtime);
     }
   }
-
 }

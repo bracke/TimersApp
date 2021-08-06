@@ -9,11 +9,15 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
         data-test-preset-menu-open-button
-        {{on 'click' (fn (toggle "show" this))}}
+        {{on 'click' (fn (toggle 'show' this))}}
       >
-        Presets
+        {{t "preset_menu.Preset_Menu_Dropdown_Name"}}
       </a>
-      <ul data-test-preset-menu-dropdown class="dropdown-menu {{if this.show 'show'}}" aria-labelledby="presetDropdownMenuLink">
+      <ul
+        data-test-preset-menu-dropdown
+        class="dropdown-menu {{if this.show 'show'}}"
+        aria-labelledby="presetDropdownMenuLink"
+      >
         {{#each @presets as |aPreset|}}
           <li>
             <a
@@ -30,7 +34,7 @@
                     aPreset.is_countdown
                     aPreset.play_sound_when_done
                   )
-                  (toggle "show" this)
+                  (toggle 'show' this)
                 )
               }}
             >

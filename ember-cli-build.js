@@ -4,9 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    'newVersion': {
+    newVersion: {
       enabled: true,
-      useAppVersion: true
+      useAppVersion: true,
     },
     'ember-service-worker': {
       registrationStrategy: 'inline',
@@ -27,10 +27,7 @@ module.exports = function (defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-
   app.import('node_modules/bootstrap/dist/css/bootstrap.css');
   app.import('app/styles/timers.css');
   return app.toTree();
-
-
 };

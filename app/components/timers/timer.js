@@ -1,10 +1,9 @@
 export default class Timer {
-
   static AudioContext = new AudioContext(); // browsers limit the number of concurrent audio contexts, so you better re-use them
 
   static beep(vol, freq, duration) {
-    v = AudioContext.createOscillator();
-    u = AudioContext.createGain();
+    let v = AudioContext.createOscillator();
+    let u = AudioContext.createGain();
     v.connect(u);
     v.frequency.value = freq;
     v.type = 'square';

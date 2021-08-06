@@ -3,22 +3,20 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-
 module('Integration | Component | timers/item', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders without countdown', async function (assert) {
-
     var aTimer = {
       name: 'untitled',
       target_runtime: 0,
       is_countdown: false,
       Play_Sound_When_Done: false,
       running: false,
-      runtime: 0
+      runtime: 0,
     };
     this.set('timer', aTimer);
-    this.set('closeAction', function (val) {  });
+    this.set('closeAction', function () {});
 
     await render(hbs`<Timers::Item
       @timer={{this.timer}}
@@ -46,7 +44,7 @@ module('Integration | Component | timers/item', function (hooks) {
       runtime: 0,
     };
     this.set('timer', aTimer);
-    this.set('closeAction', function (val) {});
+    this.set('closeAction', function () {});
 
     await render(hbs`<Timers::Item
       @timer={{this.timer}}

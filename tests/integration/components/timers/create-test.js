@@ -7,7 +7,6 @@ module('Integration | Component | timers/create', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-
     this.set('Presets', [
       {
         name: 'Pomodoro',
@@ -22,8 +21,8 @@ module('Integration | Component | timers/create', function (hooks) {
         play_sound_when_done: false,
       },
     ]);
-    this.set('addTimer', function (val) {});
-    this.set('cancelCreateDialog', function (val) {});
+    this.set('addTimer', function () {});
+    this.set('cancelCreateDialog', function () {});
 
     await render(hbs`<Timers::Create
         @cancel={{this.cancelCreateDialog}}
@@ -48,7 +47,5 @@ module('Integration | Component | timers/create', function (hooks) {
     await click('[data-test-is-countdown] .x-toggle');
     assert.dom('[data-test-target-runtime]').exists();
     assert.dom('[data-test-play-sound-when-done]').exists();
-
-
   });
 });

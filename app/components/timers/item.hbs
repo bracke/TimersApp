@@ -1,6 +1,4 @@
-<div
-  class="timers_item bd-callout bd-callout-info"
->
+<div class="timers_item bd-callout bd-callout-info">
   <h5>
     {{@timer.name}}
   </h5>
@@ -15,7 +13,7 @@
             {{on 'click' (fn this.stop @timer)}}
           >
             <FaIcon @icon="pause" />
-            Pause
+            {{t "item.Pause_Button_Name"}}
           </button>
         {{else}}
           <button
@@ -25,7 +23,7 @@
             {{on 'click' (fn this.start @timer)}}
           >
             <FaIcon @icon="play" />
-            Start
+            {{t 'item.Start_Button_Name'}}
           </button>
         {{/if}}
         <button
@@ -35,11 +33,11 @@
           {{on 'click' (fn this.reset @timer)}}
         >
           <FaIcon @icon="ban" />
-          Reset
+          {{t 'item.Reset_Button_Name'}}
         </button>
         <div class="section">
           <label>
-            Runtime
+            {{t 'item.Runtime_Label'}}
           </label>
           <br />
           <div class="number" data-test-runtime>
@@ -47,11 +45,9 @@
           </div>
         </div>
         {{#if @timer.is_countdown}}
-          <div
-            class="section"
-            data-test-countdown>
+          <div class="section" data-test-countdown>
             <label>
-              Countdown
+              {{t 'item.Countdown_Label'}}
             </label>
             <br />
             <div class="number">
@@ -84,10 +80,10 @@
             cy="75"
             r="50"
             stroke-width="10px"
-            stroke-dasharray="{{mult @timer.completion_percentage (div 314 100)}}
+            stroke-dasharray="{{mult @timer.completion_percentage (div 314 100)
+              }}
                314"
-          >
-          </circle>
+          ></circle>
           <text
             class="CircularProgress-Text"
             x="75"
