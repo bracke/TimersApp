@@ -11,13 +11,18 @@
         <div class="section">
           <label for="Timer_Name">Name</label><br />
           <Input
-            class="form-control"
+            class="form-control {{if this.New_Timer_Name_IsValid '' 'border-danger'}}"
             placeholder="timer name"
             id="Timer_Name"
             @value={{this.New_Timer_Name}}
             data-test-timer_name
             {{autofocus}}
           />
+          {{#unless this.New_Timer_Name_IsValid}}
+            <span class="text-danger">
+              Please name the timer
+            </span>
+          {{/unless}}
         </div>
         <div class="section">
           <label for="New_Timer_Is_Countdown">Countdown</label><br />
@@ -32,13 +37,18 @@
           <div class="section">
             <label for="Timer_Target_Runtime">Time in minutes</label><br />
             <Input
-              class="form-control"
+              class="form-control {{if this.New_Timer_Target_Runtime_In_Minutes_IsValid '' 'border-danger'}}"
               placeholder="Time in minutes"
               @type="number"
               id="Timer_Target_Runtime"
               @value={{this.New_Timer_Target_Runtime_In_Minutes}}
               data-test-target-runtime
+              min="1"
+              max="1440"
             />
+            {{#unless this.New_Timer_Target_Runtime_In_Minutes_IsValid}}
+              <span class="text-danger">Please use a valid number, larger than 0 and less than a day</span>
+            {{/unless}}
           </div>
           <div class="section">
             <label for="New_Timer_Play_Sound_When_Done">Play sound when done</label><br />
@@ -53,6 +63,7 @@
         {{/if}}
       </div>
   </div>
+
   <button
     type="button"
     class="btn btn-secondary btn-sm"
