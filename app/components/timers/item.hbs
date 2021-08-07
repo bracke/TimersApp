@@ -1,4 +1,7 @@
-<div class="timers_item bd-callout bd-callout-info">
+<div class="timers_item bd-callout
+{{if @timer.running ' timer_running ' ''}}
+{{if @timer.is_done ' timer_done ' ''}}
+{{if @timer.is_paused ' timer_stopped ' ''}}">
   <h5>
     {{@timer.name}}
   </h5>
@@ -75,7 +78,11 @@
           ></circle>
           <circle
             transform="rotate(-90 75 75)"
-            class="CircularProgress-Fg"
+            class="CircularProgress-Fg
+            {{if @timer.running ' timer_running ' ''}}
+            {{if @timer.is_done ' timer_done ' ''}}
+            {{if @timer.is_paused ' timer_stopped ' ''}}
+            "
             cx="75"
             cy="75"
             r="50"

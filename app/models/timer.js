@@ -22,6 +22,12 @@ export default class TimerModel extends Model {
   Format_Time = (seconds) =>
     this.Date_Formatter.format(new Date(seconds * 1000));
 
+  get is_paused() {
+    return !this.running && this.runtime > 0 && (this.is_countdown && this.runtime !== this.target_runtime);
+  }
+  get is_done() {
+    return !this.running && this.runtime === this.target_runtime;
+  }
   get runtime_timestring() {
     return this.Format_Time(this.runtime);
   }

@@ -67,7 +67,21 @@
 
 .timers_item .CircularProgress-Fg {
   transition: stroke-dashoffset .5s ease-in-out;
-  stroke: red;
+}
+
+.timer_stopped {
+  stroke: #dc3545;
+  border-left-color: #dc3545 !important;
+}
+
+.timer_running {
+  stroke: #ffc107;
+  border-left-color: #ffc107 !important;
+}
+
+.timer_done {
+  stroke: #198754;
+  border-left-color: #198754 !important;
 }
 
 .timers_item .CircularProgress-Text {
