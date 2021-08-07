@@ -1,25 +1,25 @@
 create:
-  title: Add timer
+  title: Timer hinzufügen
   Timer_Name_Label: Name
-  Timer_Name_Validation_Message: Please name the timer
+  Timer_Name_Validation_Message: Bitte Namen ausfüllen
   Timer_Countdown_Label: Countdown
   Timer_Target_Runtime: Time in minutes
   Timer_Target_Runtime_Validation_Message: Please use a valid number, larger than 0 and less than a day
   Timer_Play_Sound_When_Done_Label: Play sound when done
-  Add_Button_Name: Add
+  Add_Button_Name: Hinzufügen
   Cancel_Button_Name: Cancel
 
 preset_menu:
   Preset_Menu_Dropdown_Name: Presets
 
 list:
-  Add_Timer_Button_Name: Add Timer
+  Add_Timer_Button_Name: Timer hinzufügen
 
 item:
   Pause_Button_Name: Pause
   Start_Button_Name: Start
-  Reset_Button_Name: Reset
-  Runtime_Label: Runtime
+  Reset_Button_Name: Zurückstellen
+  Runtime_Label: Laufzeit
   Countdown_Label: Countdown
 
 index_page:
@@ -27,14 +27,14 @@ index_page:
   intro: Click on the 'Add Timer' button to create a timer or countdown. You can create as many as you like.
 
 intro_page:
-  title: Intro
+  title: Einführung
 
 about_page:
-  title: About
+  title: Impressum
   text:
 
 navbar:
-  brand: Timers by Bent Bracke
-  intro_label: Introduction
+  brand: Timers von Bent Bracke
+  intro_label: Einführung
   timers_label: Timers
-  about_label: About
+  about_label: Impressum

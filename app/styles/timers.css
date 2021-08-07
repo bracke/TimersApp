@@ -51,64 +51,77 @@
   position: relative;
 }
 
-  @media only screen and (min-device-width: 740px) {
-    .timers_item {
-      margin-right: 10px
-    }
+@media only screen and (min-device-width: 740px) {
+  .timers_item {
+    margin-right: 10px
   }
-  .timers_item .CircularProgress-Bg, .timers_item .CircularProgress-Fg {
-    fill: none;
-  }
-  .timers_item .CircularProgress-Bg {
-    stroke: #CCC;
-  }
-  .timers_item .CircularProgress-Fg {
-    transition: stroke-dashoffset .5s ease-in-out;
-    stroke: red;
-  }
-  .timers_item .CircularProgress-Text {
-    font-size: 20px;
-    font-weight: 600;
-    fill: rgba(0, 0, 0, 0.9);
-    transform: translate(0 50%);
-  }
-  .timers_item .data {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between
-  }
-  .timers_item .close_icon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-  }
-  .timers_liste {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .bootstrapstyles {
-    margin: 0;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .bootstrapstyles .h5, .bootstrapstyles h5 {
-    display: block;
-    font-size: 20px;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-weight: 500;
-    line-height: 24px;
-  }
+}
+
+.timers_item .CircularProgress-Bg, .timers_item .CircularProgress-Fg {
+  fill: none;
+}
+
+.timers_item .CircularProgress-Bg {
+  stroke: #CCC;
+}
+
+.timers_item .CircularProgress-Fg {
+  transition: stroke-dashoffset .5s ease-in-out;
+  stroke: red;
+}
+
+.timers_item .CircularProgress-Text {
+  font-size: 20px;
+  font-weight: 600;
+  fill: rgba(0, 0, 0, 0.9);
+  transform: translate(0 50%);
+}
+
+.timers_item .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.timers_item .close_icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.timers_liste {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.bootstrapstyles {
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bootstrapstyles .h5, .bootstrapstyles h5 {
+  display: block;
+  font-size: 20px;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.PresetMenu .dropdown {
+  z-index: 1000;
+}

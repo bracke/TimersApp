@@ -1,0 +1,40 @@
+create:
+  title: Tilføj timer
+  Timer_Name_Label: Navn
+  Timer_Name_Validation_Message: Indtast et navn
+  Timer_Countdown_Label: Nedtælling
+  Timer_Target_Runtime: Tid i minutter
+  Timer_Target_Runtime_Validation_Message: Benyt et nummer som er større end 0 og mindre end en dag.
+  Timer_Play_Sound_When_Done_Label: Afspil lyd til slut
+  Add_Button_Name: Tilføj
+  Cancel_Button_Name: Annuller
+
+preset_menu:
+  Preset_Menu_Dropdown_Name: Presets
+
+list:
+  Add_Timer_Button_Name: Tilføj timer
+
+item:
+  Pause_Button_Name: Pause
+  Start_Button_Name: Start
+  Reset_Button_Name: Nulstil
+  Runtime_Label: Varighed
+  Countdown_Label: Nedtælling
+
+index_page:
+  title: Timere
+  intro: Klik på 'Tilføj timer' knappen for at oprette en timer eller nedtælling. Du kan oprette lige så mange du vil.
+
+intro_page:
+  title: Intro
+
+about_page:
+  title: Om
+  text:
+
+navbar:
+  brand: Timere ved Bent Bracke
+  intro_label: Introduktion
+  timers_label: Timere
+  about_label: Om
