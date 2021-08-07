@@ -111,4 +111,22 @@ export default class TimersListComponent extends Component {
     this.state.display_create_dialog = false;
     this.state.save();
   }
+  @action
+  addPreset(
+    New_Timer_Name,
+    New_Timer_Target_Runtime_In_Minutes,
+    New_Timer_Is_Countdown,
+    New_Timer_Play_Sound_When_Done
+  ) {
+    let aPreset = this.store.createRecord('preset', {
+      name: New_Timer_Name,
+      runtime_in_minutes: New_Timer_Target_Runtime_In_Minutes,
+      is_countdown: New_Timer_Is_Countdown,
+      play_sound_when_done: New_Timer_Play_Sound_When_Done,
+    });
+    aPreset.save();
+
+    this.state.display_create_dialog = false;
+    this.state.save();
+  }
 }

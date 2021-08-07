@@ -68,4 +68,15 @@ export default class TimersCreateComponent extends Component {
       this.initialize_new_timer();
     }
   }
+  @action
+  addPreset() {
+    let isValid = this.validate();
+    this.args.addPreset(
+        this.New_Timer_Name,
+        this.New_Timer_Target_Runtime_In_Minutes,
+        this.New_Timer_Is_Countdown,
+        this.New_Timer_Play_Sound_When_Done
+      );
+
+  }
 }

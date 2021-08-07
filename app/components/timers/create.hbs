@@ -82,22 +82,33 @@
       {{/if}}
     </div>
   </div>
-  <button
-    type="button"
-    class="btn btn-secondary btn-sm"
-    data-test-cancel-button
-    {{on 'click' @cancel}}
-  >
-    <FaIcon @icon="ban" />
-    {{t "create.Cancel_Button_Name"}}
-  </button>
-  <button
-    type="button"
-    class="btn btn-primary btn-sm"
-    data-test-add-button
-    {{on 'click' this.addTimer}}
-  >
-    <FaIcon @icon="plus" />
-    {{t "create.Add_Button_Name"}}
-  </button>
+  <div class="d-flex flex-row">
+    <button
+      type="button"
+      class="btn btn-secondary btn-sm"
+      data-test-cancel-button
+      {{on 'click' @cancel}}
+    >
+      <FaIcon @icon="ban" />
+      {{t "create.Cancel_Button_Name"}}
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary btn-sm ms-2"
+      data-test-add-button
+      {{on 'click' this.addTimer}}
+    >
+      <FaIcon @icon="plus" />
+      {{t "create.Add_Button_Name"}}
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-sm  ms-auto"
+      data-test-add-preset-button
+      {{on 'click' this.addPreset}}
+    >
+      <FaIcon @icon="plus" />
+      {{t 'create.Add_Preset_Name'}}
+    </button>
+  </div>
 </div>

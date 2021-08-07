@@ -6,8 +6,9 @@ create:
   Timer_Target_Runtime: Tid i minutter
   Timer_Target_Runtime_Validation_Message: Benyt et nummer som er større end 0 og mindre end en dag.
   Timer_Play_Sound_When_Done_Label: Afspil lyd til slut
-  Add_Button_Name: Tilføj
+  Add_Button_Name: Tilføj timer
   Cancel_Button_Name: Annuller
+  Add_Preset_Name: Tilføj preset
 
 preset_menu:
   Preset_Menu_Dropdown_Name: Presets

@@ -6,8 +6,9 @@ create:
   Timer_Target_Runtime: Time in minutes
   Timer_Target_Runtime_Validation_Message: Please use a valid number, larger than 0 and less than a day
   Timer_Play_Sound_When_Done_Label: Play sound when done
-  Add_Button_Name: Hinzufügen
+  Add_Button_Name: Timer hinzufügen
   Cancel_Button_Name: Cancel
+  Add_Preset_Name: Preset hinzufügen
 
 preset_menu:
   Preset_Menu_Dropdown_Name: Presets
