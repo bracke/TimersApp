@@ -38,8 +38,8 @@ module.exports = function (/* environment, appConfig */) {
       },
       {
         src: 'banner.png',
-        sizes: '638x412',
-        purpose: 'any',
+        sizes: '1062x705',
+        purpose: 'maskable',
         type: 'image/png',
       },
     ],
