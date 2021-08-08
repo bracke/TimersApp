@@ -27,6 +27,7 @@ module.exports = function (/* environment, appConfig */) {
       {
         src: 'icon192.png',
         sizes: '192x192',
+        purpose: 'any',
         type: 'image/png',
       },
     ],
