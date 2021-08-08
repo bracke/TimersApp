@@ -39,3 +39,8 @@ navbar:
   intro_label: Introduktion
   timers_label: Timere
   about_label: Om
+
+
+add_to_homescreen:
+  ios: "For at tilføje denne web app til hjemmeskærmen: Tryk på symbol og derefter <strong>Føj til hjemmeskærm</strong>."
+  android: "For at tilføje denne web app til hjemmeskærmen, åbn browser egenskaber menuen og tryk på <strong>Føj til hjemmeskærm</strong>. <small>Denne menu kan tilgås ved at trykke på menu knappen, hvis din enhed har en, eller ved at trykke på det øverste højre menu ikon.</small>"

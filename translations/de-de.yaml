@@ -39,3 +39,8 @@ navbar:
   intro_label: Einführung
   timers_label: Timers
   about_label: Impressum
+
+
+add_to_homescreen:
+  ios: "Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf das Symbol und dann <strong>Zum Home-Bildschirm</strong>."
+  android: "Um diese Web-App zum Home-Bildschirm hinzuzufügen, öffnen Sie das Menü und tippen dann auf <strong>Zum Startbildschirm hinzufügen</strong>. <small>Wenn Ihr Gerät eine Menütaste hat, lässt sich das Browsermenü über diese öffnen. Ansonsten tippen Sie auf das Symbol.</small>"

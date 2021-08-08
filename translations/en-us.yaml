@@ -39,3 +39,7 @@ navbar:
   intro_label: Introduction
   timers_label: Timers
   about_label: About
+
+add_to_homescreen:
+  ios: "To add this web app to the home screen: tap icon and then <strong>Add to Home Screen</strong>"
+  android: "To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon.</small>"
