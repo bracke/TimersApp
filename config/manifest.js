@@ -38,10 +38,10 @@ module.exports = function (/* environment, appConfig */) {
       },
       {
         src: 'banner.png',
-        sizes: '1062x705',
+        sizes: '640x640',
         purpose: 'maskable',
         type: 'image/png',
-      },
+      }
     ],
     ms: {
       tileColor: '#fff',
