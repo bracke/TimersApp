@@ -29,5 +29,6 @@ module.exports = function (defaults) {
 
   app.import('node_modules/bootstrap/dist/css/bootstrap.css');
   app.import('app/styles/timers.css');
+  app.import('app/styles/add_to_homescreen.css');
   return app.toTree();
 };

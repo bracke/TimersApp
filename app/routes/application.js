@@ -14,6 +14,7 @@ export default class ApplicationRoute extends Route {
       'de-DE',
       'da-DK',
     ]);
+    console.log(bestLanguage.language);
     this.intl.setLocale([bestLanguage.language]);
   }
 }

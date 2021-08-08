@@ -28,18 +28,22 @@ export default class Timer {
         }
       }
     }
+    aTimer.save();
   }
   static start(aTimer) {
     aTimer.timer = setInterval(() => {
       Timer.increment(aTimer);
     }, 1000);
     aTimer.running = true;
+    aTimer.save();
   }
   static stop(aTimer) {
     clearInterval(aTimer.timer);
     aTimer.running = false;
+    aTimer.save();
   }
   static reset(aTimer) {
     aTimer.runtime = 0;
+    aTimer.save();
   }
 }
