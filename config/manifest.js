@@ -30,6 +30,12 @@ module.exports = function (/* environment, appConfig */) {
         purpose: 'any',
         type: 'image/png',
       },
+      {
+        src: 'maskable_icon.png',
+        sizes: '192x192',
+        purpose: 'maskable',
+        type: 'image/png',
+      },
     ],
     ms: {
       tileColor: '#fff',
