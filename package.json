@@ -36,6 +36,7 @@
     "els-a11y-addon": "^1.0.4",
     "els-component-extraction-addon": "^0.1.12",
     "els-intl-addon": "^1.0.5",
+    "ember-animated": "^0.11.0",
     "ember-auto-import": "2.0.2",
     "ember-autofocus-modifier": "^2.0.0",
     "ember-best-language": "^2.0.3",
