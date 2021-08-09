@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from 'tracked-built-ins';
+import { toUp, toDown } from 'ember-animated/transitions/move-over';
 
 export default class TimersCreateComponent extends Component {
   @tracked New_Timer_Name;
@@ -72,11 +73,17 @@ export default class TimersCreateComponent extends Component {
   addPreset() {
     let isValid = this.validate();
     this.args.addPreset(
-        this.New_Timer_Name,
-        this.New_Timer_Target_Runtime_In_Minutes,
-        this.New_Timer_Is_Countdown,
-        this.New_Timer_Play_Sound_When_Done
-      );
-
+      this.New_Timer_Name,
+      this.New_Timer_Target_Runtime_In_Minutes,
+      this.New_Timer_Is_Countdown,
+      this.New_Timer_Play_Sound_When_Done
+    );
+  }
+  rules({ newItems }) {
+    if (newItems[0]) {
+      return toDown;
+    } else {
+      return toUp;
+    }
   }
 }

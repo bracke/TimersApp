@@ -2,6 +2,7 @@
   border: 1px solid whitesmoke;
   box-shadow: 2px 2px whitesmoke;
   padding: 10px;
+  max-width: 400px;
 }
 
 .timers_create .body {
@@ -136,6 +137,10 @@
   line-height: 24px;
 }
 
-.PresetMenu .dropdown {
-  z-index: 1000;
+.PresetMenu  {
+  z-index: 10000;
+}
+
+.animated-container.create_timer, .animated-container.create_timer_countdown {
+  overflow: hidden;
 }

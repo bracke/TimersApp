@@ -1,24 +1,26 @@
-{{#if this.state.display_create_dialog}}
-  <Timers::Create
-    @cancel={{this.cancelCreateDialog}}
-    @addTimer={{this.addTimer}}
-    @addPreset={{this.addPreset}}
-    @presets={{this.Presets}}
-  />
-{{else}}
-  <button
-    type="button"
-    class="btn btn-primary btn-md"
-    data-test-add-button
-    {{on 'click' this.addButtonClicked}}
-  >
-    <FaIcon @icon="plus" />
-    {{t "list.Add_Timer_Button_Name"}}
-  </button>
-{{/if}}
+<AnimatedContainer class="create_timer">
+  {{#animated-if this.state.display_create_dialog rules=this.rules}}
+    <Timers::Create
+      @cancel={{this.cancelCreateDialog}}
+      @addTimer={{this.addTimer}}
+      @addPreset={{this.addPreset}}
+      @presets={{this.Presets}}
+    />
+  {{else}}
+    <button
+      type="button"
+      class="btn btn-primary btn-md"
+      data-test-add-button
+      {{on 'click' this.addButtonClicked}}
+    >
+      <FaIcon @icon="plus" />
+      {{t "list.Add_Timer_Button_Name"}}
+    </button>
+  {{/animated-if}}
+ </AnimatedContainer>
 <br />
 <div class="timers_liste">
-  {{#each this.timers key='@index' as |timer|}}
+  {{#animated-each this.timers use=this.transition duration=1000 as |timer|}}
     <Timers::Item @timer={{timer}} @close={{this.close}} />
-  {{/each}}
+  {{/animated-each}}
 </div>

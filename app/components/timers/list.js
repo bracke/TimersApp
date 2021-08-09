@@ -2,12 +2,17 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from 'tracked-built-ins';
 import { inject as service } from '@ember/service';
+import { toUp, toDown } from 'ember-animated/transitions/move-over';
+import move from 'ember-animated/motions/move';
+import { fadeOut } from 'ember-animated/motions/opacity';
 import Timer from './timer';
 import presets from './presets';
 export default class TimersListComponent extends Component {
   Timers;
   Max_Id;
   Presets;
+  toUp;
+  toDown;
 
   @service store;
   @tracked state;
@@ -128,5 +133,21 @@ export default class TimersListComponent extends Component {
 
     this.state.display_create_dialog = false;
     this.state.save();
+  }
+  rules({ newItems }) {
+    if (newItems[0]) {
+      return toDown;
+    } else {
+      return toUp;
+    }
+  }
+  * transition({ keptSprites, removedSprites }) {
+    for (let sprite of keptSprites) {
+      move(sprite);
+    }
+
+    for (let sprite of removedSprites) {
+      fadeOut(sprite);
+    }
   }
 }

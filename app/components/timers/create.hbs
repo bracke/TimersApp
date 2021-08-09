@@ -41,7 +41,8 @@
           id="New_Timer_Is_Countdown"
         />
       </div>
-      {{#if this.New_Timer_Is_Countdown}}
+      <AnimatedContainer class="create_timer_countdown">
+  {{#animated-if this.New_Timer_Is_Countdown rules=this.rules}}
         <div class="section">
           <label for="Timer_Target_Runtime">
             {{t 'create.Timer_Target_Runtime'}}
@@ -79,7 +80,8 @@
             id="New_Timer_Play_Sound_When_Done"
           />
         </div>
-      {{/if}}
+      {{/animated-if}}
+ </AnimatedContainer>
     </div>
   </div>
   <div class="d-flex flex-row">
