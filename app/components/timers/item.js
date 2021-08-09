@@ -10,7 +10,7 @@ export default class TimersItemComponent extends Component {
     aTimer.save();
   }
   reset(aTimer) {
-    Timer.reset();
+    Timer.reset(aTimer);
     aTimer.save();
   }
 }

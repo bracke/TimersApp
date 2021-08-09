@@ -32,7 +32,7 @@ intro_page:
 
 about_page:
   title: About
-  text:
+  text: ""
 
 navbar:
   brand: Timers by Bent Bracke

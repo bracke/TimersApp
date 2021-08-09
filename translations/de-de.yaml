@@ -32,7 +32,7 @@ intro_page:
 
 about_page:
   title: Impressum
-  text:
+  text: ""
 
 navbar:
   brand: Timers von Bent Bracke

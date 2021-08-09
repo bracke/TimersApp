@@ -23,4 +23,5 @@
   {{#animated-each this.timers use=this.transition duration=1000 as |timer|}}
     <Timers::Item @timer={{timer}} @close={{this.close}} />
   {{/animated-each}}
+  <audio id="timer_beep" src="/beep.ogg" autoPlay muted></audio>
 </div>
